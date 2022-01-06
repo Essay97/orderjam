@@ -16,6 +16,7 @@ export default function Home({ products }) {
             weight={product.attributes.weight}
             price={product.attributes.price}
             marginBottom={9}
+            key={idx}
           />
         ))}
       </Container>

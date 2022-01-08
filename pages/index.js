@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import Container from "@mui/material/Container";
 import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
+import "netlify-identity-widget";
 
 export default function Home({ products }) {
   return (

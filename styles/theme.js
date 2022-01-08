@@ -1,5 +1,5 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
-import { lime, amber } from "@mui/material/colors";
+import { brown, amber } from "@mui/material/colors";
 
 // Create a theme instance.
 let theme = createTheme();
@@ -8,7 +8,7 @@ theme = createTheme({
   palette: {
     primary: amber,
     secondary: {
-      main: lime[900],
+      main: brown[600],
     },
   },
   typography: {

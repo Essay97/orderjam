@@ -64,11 +64,13 @@ export default function ProductCard({
             height={93}
             toggle={({ isOpen }) =>
               isOpen ? (
-                <Button disableRipple color="secondary">
+                <Typography variant="button" color="secondary">
                   Show less
-                </Button>
+                </Typography>
               ) : (
-                <Button disableRipple>Show more</Button>
+                <Typography variant="button" color="primary">
+                  Show more
+                </Typography>
               )
             }
           >

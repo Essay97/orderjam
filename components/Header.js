@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import AuthContext from "../context/authContext";
-import { useContext } from "react";
 
 export default function Header() {
-  const { user, login } = useContext(AuthContext);
+  const { user, login, logout, authReady } = useContext(AuthContext);
+
+  console.log(user);
 
   return (
     <AppBar position="static" sx={{ marginBottom: "60px" }}>
@@ -12,9 +13,15 @@ export default function Header() {
         <Typography variant="h4" flexGrow={1}>
           OrderJam
         </Typography>
-        <Button color="inherit" onClick={login}>
-          Login
-        </Button>
+        {authReady && (
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={user ? logout : login}
+          >
+            {user ? "Logout" : "Login"}
+          </Button>
+        )}
       </Toolbar>
     </AppBar>
   );

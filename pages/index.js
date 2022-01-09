@@ -6,11 +6,7 @@ import AuthContext from "../context/authContext";
 import { useContext } from "react";
 
 async function debug(token) {
-  const response = await fetch("/.netlify/functions/users", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await fetch("/.netlify/functions/users");
   const data = await response.json();
   console.log(data);
 }

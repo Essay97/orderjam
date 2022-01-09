@@ -13,7 +13,7 @@ export default function Header() {
         <Typography variant="h4" flexGrow={1}>
           OrderJam
         </Typography>
-        {authReady && (
+        {true && (
           <Button
             variant="contained"
             color="secondary"

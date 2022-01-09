@@ -4,11 +4,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import React from "react";
+import React, { useContext } from "react";
 import Stack from "@mui/material/Stack";
 import WeightIcon from "@mui/icons-material/FitnessCenter";
 import EuroIcon from "@mui/icons-material/EuroSymbol";
 import AnimatedShowMore from "react-animated-show-more";
+import AuthContext from "../context/authContext";
 
 const styles = {
   card: {
@@ -50,8 +51,15 @@ export default function ProductCard({
   description,
   weight,
   price,
+  productId,
   marginBottom,
 }) {
+  const { user } = useContext(AuthContext);
+
+  function handleOrder() {
+    console.log("Ordering product", user.url, user.token);
+  }
+
   return (
     <Card sx={{ ...styles.card, marginBottom }} variant="outlined">
       <CardMedia component="img" image={imgUrl} sx={styles.photo} />
@@ -105,7 +113,9 @@ export default function ProductCard({
           justifyContent="center"
           alignItems="center"
         >
-          <Button variant="contained">Add to cart</Button>
+          <Button variant="contained" onClick={handleOrder}>
+            Add to cart
+          </Button>
         </Box>
       </CardContent>
     </Card>

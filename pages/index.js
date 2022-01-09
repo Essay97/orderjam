@@ -8,15 +8,16 @@ export default function Home({ products }) {
     <>
       <Header />
       <Container>
-        {products.map((product, idx) => (
+        {products.map((product) => (
           <ProductCard
             imgUrl={product.attributes.image.data.attributes.formats.small.url}
             title={product.attributes.name}
             description={product.attributes.description}
             weight={product.attributes.weight}
             price={product.attributes.price}
+            productId={product.id}
             marginBottom={9}
-            key={idx}
+            key={product.id}
           />
         ))}
       </Container>
